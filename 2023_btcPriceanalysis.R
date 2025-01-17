@@ -20,20 +20,15 @@ names(btc_df) <- c("Date", "Open", "High", "Low", "Close", "Volume", "Adjusted")
 head(btc_df)
 str(btc_df)
 
+library(tidyverse)
+library(dplyr)
+
 # Check for and remove missing values in btc_df
 btc_df <- btc_df %>%
   filter(complete.cases(.))
 
 # Check for and remove duplicated rows in btc_df
 btc_df <- btc_df %>%
-  distinct()
-
-# Check for and remove missing values in eth_df
-eth_df <- eth_df %>%
-  filter(complete.cases(.))
-
-# Check for and remove duplicated rows in eth_df
-eth_df <- eth_df %>%
   distinct()
 
 # load all required packages for calculating metrics
